@@ -1,6 +1,10 @@
-public class productoAdyacentes {
+public class ProductoAdyacentes {
 
     public int productoAdayacentes(int[] arreglo){
+        // (Lorenzo Devia)
+        // El método va a devolver un número entero (el producto mayor),
+        // para realizar las operaciones necesarias se necesita
+        // un arreglo de enteros como argumento
         int m_producto = 0;
 
         for (int i = 0; i <= arreglo.length - 2; i++) {
