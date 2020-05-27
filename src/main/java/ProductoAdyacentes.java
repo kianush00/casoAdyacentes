@@ -1,6 +1,6 @@
 public class ProductoAdyacentes {
 
-    public static int prodAdyacentes(int[] arreglo){
+    public static int productoAdyacentes(int[] arreglo){
 
         int mayorProducto = -99999;     //valor inicial
         int producto;
