@@ -11,7 +11,7 @@ public class productoAdyacentes {
             if(producto > mayorProducto){
                 mayorProducto = producto;
             }
-        }
+        }//asd
 
         return mayorProducto;
     }
