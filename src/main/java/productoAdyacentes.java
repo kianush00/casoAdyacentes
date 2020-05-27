@@ -1,8 +1,12 @@
 public class productoAdyacentes {
 
-    int[] arreglo = {1, -4, 2, 2, 5, -1};
 
-    public int prodAdyacentes(int[] arreglo){
+    public static void main(String[] args) {
+        int[] arreglo = {1, -4, 2, 2, 5, -1};
+        System.out.println(prodAdyacentes(arreglo));
+    }
+
+    public static int prodAdyacentes(int[] arreglo){
         int mayorProducto = -99999;     //valor inicial
         int producto;
 
