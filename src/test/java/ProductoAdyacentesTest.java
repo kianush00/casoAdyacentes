@@ -34,10 +34,14 @@ class ProductoAdyacentesTest {
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes04() {
+        arreglo = new int[] {-1,-1,1,-1,-1,1,-1};
+        assertEquals(1,u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes05() {
+        arreglo = new int[] {15000,1,2};
+        assertEquals("Error",u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
