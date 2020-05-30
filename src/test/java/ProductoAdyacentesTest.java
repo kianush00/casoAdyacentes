@@ -55,4 +55,9 @@ class ProductoAdyacentesTest {
         assertEquals("Error",u.prodAdyacentes(arreglo2));
     }
 
+    @org.junit.jupiter.api.Test
+    void prodAdyacentes07() {
+        arreglo2 = new int[] {1};
+        assertEquals("Error",u.prodAdyacentes(arreglo2));
+    }
 }
