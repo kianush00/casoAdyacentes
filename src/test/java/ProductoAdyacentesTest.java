@@ -6,16 +6,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductoAdyacentesTest {
 
+    private ProductoAdyacentes a;
+
     @BeforeEach
     void setUp() {
+        a = new ProductoAdyacentes();
     }
 
     @AfterEach
     void tearDown() {
+        a = null;
     }
 
     @org.junit.jupiter.api.Test
-    void prodAdyacentes() {
+    void productoAdyacentes() {
+        int[] arregloPrueba = {1,-4,2,2,5,-1};
+
     }
+
 
 }
