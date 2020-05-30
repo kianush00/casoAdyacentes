@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductoAdyacentesTest {
     ProductoAdyacentes u;
     Object[] arreglo;
+    int[] arreglo2;
     @BeforeEach
     void setUp() {
         u = new ProductoAdyacentes();
@@ -20,8 +21,8 @@ class ProductoAdyacentesTest {
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes01() {
-        arreglo = new Object[] {1, -4, 2, 2, 5, -1};
-        assertEquals(10,u.prodAdyacentes(arreglo));
+        arreglo2 = new int[] {1, -4, 2, 2, 5, -1};
+        assertEquals(10,u.prodAdyacentes(arreglo2));
     }
 
     @org.junit.jupiter.api.Test
@@ -38,20 +39,20 @@ class ProductoAdyacentesTest {
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes04() {
-        arreglo = new Object[] {-1,-1,1,-1,-1,1,-1};
-        assertEquals(1,u.prodAdyacentes(arreglo));
+        arreglo2 = new int[] {-1,-1,1,-1,-1,1,-1};
+        assertEquals(1,u.prodAdyacentes(arreglo2));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes05() {
-        arreglo = new Object[] {15000,1,2};
-        assertEquals("Error",u.prodAdyacentes(arreglo));
+        arreglo2 = new int[] {15000,1,2};
+        assertEquals("Error",u.prodAdyacentes(arreglo2));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes06() {
-        arreglo = new Object[] {};
-        assertEquals(10,u.prodAdyacentes(arreglo));
+        arreglo2 = new int[] {};
+        assertEquals(10,u.prodAdyacentes(arreglo2));
     }
 
 }
