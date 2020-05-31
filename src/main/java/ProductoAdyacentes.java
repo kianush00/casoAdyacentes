@@ -48,7 +48,15 @@ public class ProductoAdyacentes {
         return true;
     }
     public boolean verificadorValores(Object[] arreglo){
-        return true;
+        int[] arregloInt = new int[arreglo.length];
+        boolean estado = true;
+        copiarEnInt(arreglo, arregloInt);
+        for (int i = 0; i < arreglo.length; i++) {
+            if (arregloInt[i] > 1000 || -1000 > arregloInt[i]) {
+                estado = false;
+            }
+        }
+        return estado;
     }
     public static void copiarEnInt(Object[] original, int[] copia){
         for (int i = 0; i < copia.length; i++) {
