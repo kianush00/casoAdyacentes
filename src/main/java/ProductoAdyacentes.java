@@ -27,7 +27,7 @@ public class ProductoAdyacentes {
         }
     }
     public boolean verificadorLargo(Object[] arreglo){
-        return true;
+        return 2 <= arreglo.length && arreglo.length <= 20;
     }
     public boolean verificadorNoNumeros(Object[] arreglo){
         return true;

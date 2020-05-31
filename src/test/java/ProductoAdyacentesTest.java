@@ -71,9 +71,9 @@ class ProductoAdyacentesTest {
         assertEquals(false,u.verificadorValores(arreglo));
     }
     @org.junit.jupiter.api.Test
-    void verificadorLargo() {
+    void verificadorLargo01() {
         arreglo = new Object[]{1, "2a", 3};
-        assertEquals(false, u.verificadorLargo(arreglo));
+        assertEquals(true, u.verificadorLargo(arreglo));
     }
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros01() {
