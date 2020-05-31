@@ -7,7 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductoAdyacentesTest {
     ProductoAdyacentes u;
     Object[] arreglo;
-    int[] arreglo2;
+    int[] arregloInt;
+    int[] arregloDePrueba;
+    int variablePrueba;
+
     @BeforeEach
     void setUp() {
         u = new ProductoAdyacentes();
@@ -21,8 +24,8 @@ class ProductoAdyacentesTest {
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes01() {
-        arreglo2 = new int[] {1, -4, 2, 2, 5, -1};
-        assertEquals(10,u.prodAdyacentes(arreglo2));
+        arreglo = new Object[] {1, -4, 2, 2, 5, -1};
+        assertEquals(10,u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
@@ -39,25 +42,75 @@ class ProductoAdyacentesTest {
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes04() {
-        arreglo2 = new int[] {-1,-1,1,-1,-1,1,-1};
-        assertEquals(1,u.prodAdyacentes(arreglo2));
+        arreglo = new Object[] {-1,-1,1,-1,-1,1,-1};
+        assertEquals(1,u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes05() {
-        arreglo2 = new int[] {15000,1,2};
-        assertEquals("Error",u.prodAdyacentes(arreglo2));
+        arreglo = new Object[] {15000,1,2};
+        assertEquals("Error",u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes06() {
-        arreglo2 = new int[] {};
-        assertEquals("Error",u.prodAdyacentes(arreglo2));
+        arreglo = new Object[] {};
+        assertEquals("Error",u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes07() {
-        arreglo2 = new int[] {1};
-        assertEquals("Error",u.prodAdyacentes(arreglo2));
+        arreglo = new Object[] {1};
+        assertEquals("Error",u.prodAdyacentes(arreglo));
+    }
+
+
+    @org.junit.jupiter.api.Test
+    void verificadorValores01() {
+        arreglo = new Object[] {15000,1,2};
+        assertEquals(false,u.verificadorValores(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorLargo() {
+        arreglo = new Object[]{1, "2a", 3};
+        assertEquals(false, u.verificadorLargo(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorNoNumeros01() {
+        arreglo = new Object[]{1, "2a", 3};
+        assertEquals(false, u.verificadorNoNumeros(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorNoNumeros02() {
+        arreglo = new Object[]{1, 2, 3};
+        assertEquals(true, u.verificadorNoNumeros(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorNoNumeros03() {
+        arreglo = new Object[]{"a", "B", "c"};
+        assertEquals(false, u.verificadorNoNumeros(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorNoNumeros04() {
+        arreglo = new Object[]{1,-4,2,2,5,-1};
+        assertEquals(true, u.verificadorNoNumeros(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void verificadorNoNumeros05() {
+        arreglo = new Object[]{"","","",""};
+        assertEquals(false, u.verificadorNoNumeros(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void toString01() {
+        variablePrueba = 36;
+        assertEquals("36", u.toString(variablePrueba));
+    }
+    @org.junit.jupiter.api.Test
+    void copiarEnInt() {
+        arreglo = new Object[]{1,-4,2,2,5,-1};
+        arregloInt = new int[6];
+        arregloDePrueba = new int[]{1,-4,2,2,5,-1};
+        u.copiarEnInt(arreglo,arregloInt);
+        assertArrayEquals(arregloDePrueba,arregloInt);
     }
 }
