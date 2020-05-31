@@ -25,7 +25,7 @@ class ProductoAdyacentesTest {
     @org.junit.jupiter.api.Test
     void prodAdyacentes01() {
         arreglo = new Object[] {1, -4, 2, 2, 5, -1};
-        assertEquals(10,u.prodAdyacentes(arreglo));
+        assertEquals("10",u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
@@ -43,7 +43,7 @@ class ProductoAdyacentesTest {
     @org.junit.jupiter.api.Test
     void prodAdyacentes04() {
         arreglo = new Object[] {-1,-1,1,-1,-1,1,-1};
-        assertEquals(1,u.prodAdyacentes(arreglo));
+        assertEquals("1",u.prodAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test

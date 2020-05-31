@@ -1,21 +1,24 @@
 public class ProductoAdyacentes {
 
-    public static int  prodAdyacentes(Object[] arreglo){
+    public static String  prodAdyacentes(Object[] arreglo){
 
         int mayorProducto = -99999;     //valor inicial
         int producto;
         int[] arregloInt = new int[arreglo.length];
-
-        copiarEnInt(arreglo,arregloInt);
-        for (int i = 1; i < arreglo.length; i++){
-            producto = arregloInt[i] * arregloInt[i - 1];
-            if(producto > mayorProducto){
-                mayorProducto = producto;
+        if (verificadorGeneral(arreglo)) {
+            copiarEnInt(arreglo, arregloInt);
+            for (int i = 1; i < arreglo.length; i++) {
+                producto = arregloInt[i] * arregloInt[i - 1];
+                if (producto > mayorProducto) {
+                    mayorProducto = producto;
+                }
             }
+            return toString(mayorProducto);
+        }else{
+            return "Error";
         }
-        return mayorProducto;
     }
-    public boolean verificadorGeneral(Object[] arreglo){
+    public static boolean verificadorGeneral(Object[] arreglo){
         if(verificadorLargo(arreglo)){
             if(verificadorNoNumeros(arreglo)){
                 return verificadorValores(arreglo);
@@ -26,10 +29,10 @@ public class ProductoAdyacentes {
             return false;
         }
     }
-    public boolean verificadorLargo(Object[] arreglo){
+    public static boolean verificadorLargo(Object[] arreglo){
         return 2 <= arreglo.length && arreglo.length <= 20;
     }
-    public boolean verificadorNoNumeros(Object[] arreglo){
+    public static boolean verificadorNoNumeros(Object[] arreglo){
         String aux = "";
 
         System.out.println(aux.length());
@@ -47,7 +50,7 @@ public class ProductoAdyacentes {
         }
         return true;
     }
-    public boolean verificadorValores(Object[] arreglo){
+    public static boolean verificadorValores(Object[] arreglo){
         int[] arregloInt = new int[arreglo.length];
         boolean estado = true;
         copiarEnInt(arreglo, arregloInt);
