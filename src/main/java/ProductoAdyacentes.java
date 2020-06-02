@@ -74,16 +74,19 @@ public class ProductoAdyacentes {
     }
 
     public void copiarEnInt(Object[] original, int[] copia) {
+        //Los valores del arreglo original se guardan en el arreglo copia de tipo int
         for (int i = 0; i < copia.length; i++) {
             copia[i] = (int) original[i];
         }
     }
 
     public String toString(int elemento) {
+        //El elemento de tipo int se convierte a String
         return String.valueOf(elemento);
     }
 
     public String toString(Object elemento) {
+        //El elemento de tipo object se convierte a String
         return String.valueOf(elemento);
     }
 }
