@@ -1,8 +1,8 @@
 public class ProductoAdyacentes {
 
-    public static String  prodAdyacentes(Object[] arreglo){
+    public String productoAdyacentes(Object[] arreglo){
 
-        int mayorProducto = -99999;     //valor inicial
+        int mayorProducto = -2147483648;     //valor inicial
         int producto;
         int[] arregloInt = new int[arreglo.length];
         if (verificadorGeneral(arreglo)) {
@@ -69,7 +69,7 @@ public class ProductoAdyacentes {
     public static String toString(int elemento){
         return String.valueOf(elemento);
     }
-    public static String toString(Object elemento){
+    public static String toString(Object elemento) {
         return String.valueOf(elemento);
     }
 }
