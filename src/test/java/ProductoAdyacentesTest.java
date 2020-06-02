@@ -24,8 +24,7 @@ class ProductoAdyacentesTest {
         u = null;       //después de cada prueba el objeto se borra
     }
 
-    //Se probará que cada método prodAdyacentes retorne el valor que corresponda, dependiendo del arreglo
-    //a comprobar
+    //Se probará que cada método  retorne el valor que corresponda, dependiendo del arreglo a comprobar
     @org.junit.jupiter.api.Test
     void prodAdyacentes01() {
         arreglo = new Object[] {1, -4, 2, 2, 5, -1};
