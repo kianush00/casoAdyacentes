@@ -20,6 +20,7 @@ public class ProductoAdyacentes {
         }
 
     }
+
     public boolean verificadorGeneral(Object[] arreglo){
 
         if(verificadorLargo(arreglo)){
@@ -33,9 +34,11 @@ public class ProductoAdyacentes {
         }
 
     }
+
     public boolean verificadorLargo(Object[] arreglo){
         return 2 <= arreglo.length && arreglo.length <= 20;
     }
+
     public boolean verificadorNoNumeros(Object[] arreglo){
         String aux;
 
