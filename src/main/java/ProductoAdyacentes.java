@@ -4,26 +4,28 @@ public class ProductoAdyacentes {
 
         int mayorProducto = -2147483648;     //valor inicial
         int producto;
-        int[] arregloInt = new int[arreglo.length];
+        int[] arregloInt = new int[arreglo.length];     //se declara arreglo tipo int que guardará los valores
+                                                         //del arreglo de tipo Object
         try {
             if (verificadorGeneral(arreglo)) {
                 copiarEnInt(arreglo, arregloInt);
-                for (int i = 1; i < arreglo.length; i++) {
-                    producto = arregloInt[i] * arregloInt[i - 1];
+                for (int i = 1; i < arreglo.length; i++) {          //bucle que encuentra el mayor producto entre
+                    producto = arregloInt[i] * arregloInt[i - 1];   //los valores del arreglo
                     if (producto > mayorProducto) {
                         mayorProducto = producto;
                     }
                 }
                 return toString(mayorProducto);
             } else {
-                return "El largo del arreglo es incorrecto o uno de los elementos posee un valor no válido";
+                return "El largo del arreglo es incorrecto o uno de los elementos posee un valor fuera del rango";
             }
         } catch (Exception e) {
             return "Se introdujo un elemento no válido";
         }
 
     }
-
+    //Método que comprueba que los valores estén dentro del rango correspondiente, tanto del tamaño del arreglo
+    //como el tamaño de los valores, retorna true si se cumplen las condiciones
     public boolean verificadorGeneral(Object[] arreglo) {
 
         if (verificadorLargo(arreglo)) {
@@ -34,6 +36,7 @@ public class ProductoAdyacentes {
     }
 
     public boolean verificadorLargo(Object[] arreglo) {
+        //Si el arreglo tiene un tamaño entre 2 y 20, el método retorna true, en caso contrario retorna false
         return 2 <= arreglo.length && arreglo.length <= 20;
     }
 
