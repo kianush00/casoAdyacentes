@@ -1,7 +1,7 @@
 public class ProductoAdyacentes {
 
     public String productoAdyacentes(Object[] arreglo) {
-
+        //Variables locales
         int mayorProducto = -2147483648;     //valor inicial
         int producto;
         int[] arregloInt = new int[arreglo.length];     //se declara arreglo tipo int que guardará los valores
@@ -10,8 +10,8 @@ public class ProductoAdyacentes {
             if (verificadorGeneral(arreglo)) {
                 copiarEnInt(arreglo, arregloInt);
                 for (int i = 1; i < arreglo.length; i++) {          //bucle que encuentra el mayor producto entre
-                    producto = arregloInt[i] * arregloInt[i - 1];   //los valores del arreglo
-                    if (producto > mayorProducto) {
+                    producto = arregloInt[i] * arregloInt[i - 1];   //los valores del arreglo y después del bucle
+                    if (producto > mayorProducto) {                 //se retorna el mayor producto
                         mayorProducto = producto;
                     }
                 }
@@ -19,7 +19,7 @@ public class ProductoAdyacentes {
             } else {
                 return "El largo del arreglo es incorrecto o uno de los elementos posee un valor fuera del rango";
             }
-        } catch (Exception e) {
+        } catch (Exception e) {      //si el arreglo contiene elementos que no sean de tipo int, se captura ese error
             return "Se introdujo un elemento no válido";
         }
 
@@ -40,8 +40,10 @@ public class ProductoAdyacentes {
         return 2 <= arreglo.length && arreglo.length <= 20;
     }
 
+    //Método que sirve para verificar si los elementos del arreglo son números, esto se prueba en la clase Test,
+    //no se usa en el método productoAdyacentes
     public boolean verificadorNoNumeros(Object[] arreglo) {
-        String aux;
+        String aux;      //variable local
 
         for (int i = 0; i < arreglo.length; i++) {
             aux = toString(arreglo[i]);
@@ -50,12 +52,12 @@ public class ProductoAdyacentes {
                 return false;
             }
 
-            aux = aux.replaceAll("\\d", "");
-            aux = aux.replaceAll(" ", "");
-            aux = aux.replaceAll("-", "");
+            aux = aux.replaceAll("\\d", "");    //reemplaza los números por un espacio vacío
+            aux = aux.replaceAll(" ", "");      //reemplaza los espacios por un espacio vacío
+            aux = aux.replaceAll("-", "");      //remplaza los guiones por un espacio vacío
 
-            if (aux.length() > 0) {
-                return false;
+            if (aux.length() > 0) {       //si el caracter aux contiene un caracter no numérico, entonces el arreglo
+                return false;             //no es de tipo numérico
             }
         }
         return true;
