@@ -16,7 +16,7 @@ public class ProductoAdyacentes {
                 }
                 return toString(mayorProducto);
             } else {
-                return "Error";
+                return "El largo del arreglo es incorrecto o uno de los elementos posee un valor no válido";
             }
         } catch (Exception e) {
             return "Se introdujo un elemento no válido";

@@ -53,19 +53,24 @@ class ProductoAdyacentesTest {
     @org.junit.jupiter.api.Test
     void prodAdyacentes05() {
         arreglo = new Object[] {15000,1,2};
-        assertEquals("Error",u.productoAdyacentes(arreglo));
+        assertEquals("El largo del arreglo es incorrecto o uno de los elementos posee un valor no válido",u.productoAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes06() {
         arreglo = new Object[] {};
-        assertEquals("Error",u.productoAdyacentes(arreglo));
+        assertEquals("El largo del arreglo es incorrecto o uno de los elementos posee un valor no válido",u.productoAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes07() {
         arreglo = new Object[] {1};
-        assertEquals("Error",u.productoAdyacentes(arreglo));
+        assertEquals("El largo del arreglo es incorrecto o uno de los elementos posee un valor no válido",u.productoAdyacentes(arreglo));
+    }
+    @org.junit.jupiter.api.Test
+    void prodAdyacentes08() {
+        arreglo = new Object[] {"","",""};
+        assertEquals("Se introdujo un elemento no válido",u.productoAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
