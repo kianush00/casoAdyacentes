@@ -27,15 +27,10 @@ public class ProductoAdyacentes {
     public boolean verificadorGeneral(Object[] arreglo) {
 
         if (verificadorLargo(arreglo)) {
-           // if (verificadorNoNumeros(arreglo)) {
-                return verificadorValores(arreglo);
-           // } else {
-           //     return false;
-           // }
+            return verificadorValores(arreglo);
         } else {
             return false;
         }
-
     }
 
     public boolean verificadorLargo(Object[] arreglo) {
@@ -64,10 +59,11 @@ public class ProductoAdyacentes {
     }
 
     public boolean verificadorValores(Object[] arreglo) {
-        int[] arregloInt = new int[arreglo.length];
-        boolean estado = true;
-        copiarEnInt(arreglo, arregloInt);
+        int[] arregloInt = new int[arreglo.length];    //se declara arreglo int del mismo tamaño del parámetro
+        boolean estado = true;     //se declara e inicializa el estado
+        copiarEnInt(arreglo, arregloInt);    //se guardan los valores de arreglo en arregloInt
 
+        //si los números están dentro del rango -1000 - 1000, el método retorna true, en caso contrario retorna false
         for (int i = 0; i < arreglo.length; i++) {
             if (arregloInt[i] > 1000 || -1000 > arregloInt[i]) {
                 estado = false;
