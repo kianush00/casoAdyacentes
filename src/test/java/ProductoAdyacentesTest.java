@@ -123,5 +123,6 @@ class ProductoAdyacentesTest {
         arregloDePrueba = new int[]{1,-4,2,2,5,-1};
         u.copiarEnInt(arreglo,arregloInt);
         assertArrayEquals(arregloDePrueba,arregloInt);
+
     }
 }
