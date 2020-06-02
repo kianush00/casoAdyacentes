@@ -35,13 +35,13 @@ class ProductoAdyacentesTest {
     @org.junit.jupiter.api.Test
     void prodAdyacentes02() {
         arreglo = new Object[] {1,3,"a",8};
-        assertEquals("Error",u.productoAdyacentes(arreglo));
+        assertEquals("Se introdujo un elemento no válido",u.productoAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
     void prodAdyacentes03() {
         arreglo = new Object[] {"a", "B", "c", "d"};
-        assertEquals("Error",u.productoAdyacentes(arreglo));
+        assertEquals("Se introdujo un elemento no válido",u.productoAdyacentes(arreglo));
     }
 
     @org.junit.jupiter.api.Test
