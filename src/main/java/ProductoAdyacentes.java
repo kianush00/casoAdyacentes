@@ -18,7 +18,7 @@ public class ProductoAdyacentes {
             return "Error";
         }
     }
-    public static boolean verificadorGeneral(Object[] arreglo){
+    public boolean verificadorGeneral(Object[] arreglo){
         if(verificadorLargo(arreglo)){
             if(verificadorNoNumeros(arreglo)){
                 return verificadorValores(arreglo);
@@ -29,10 +29,10 @@ public class ProductoAdyacentes {
             return false;
         }
     }
-    public static boolean verificadorLargo(Object[] arreglo){
+    public boolean verificadorLargo(Object[] arreglo){
         return 2 <= arreglo.length && arreglo.length <= 20;
     }
-    public static boolean verificadorNoNumeros(Object[] arreglo){
+    public boolean verificadorNoNumeros(Object[] arreglo){
         String aux = "";
 
         System.out.println(aux.length());
@@ -50,7 +50,7 @@ public class ProductoAdyacentes {
         }
         return true;
     }
-    public static boolean verificadorValores(Object[] arreglo){
+    public boolean verificadorValores(Object[] arreglo){
         int[] arregloInt = new int[arreglo.length];
         boolean estado = true;
         copiarEnInt(arreglo, arregloInt);
@@ -61,15 +61,15 @@ public class ProductoAdyacentes {
         }
         return estado;
     }
-    public static void copiarEnInt(Object[] original, int[] copia){
+    public void copiarEnInt(Object[] original, int[] copia){
         for (int i = 0; i < copia.length; i++) {
             copia[i] = (int) original[i];
         }
     }
-    public static String toString(int elemento){
+    public String toString(int elemento){
         return String.valueOf(elemento);
     }
-    public static String toString(Object elemento) {
+    public String toString(Object elemento) {
         return String.valueOf(elemento);
     }
 }
