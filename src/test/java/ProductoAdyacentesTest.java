@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductoAdyacentesTest {
-    ProductoAdyacentes u;
+
+    //Atributos
+    ProductoAdyacentes u;       //se declara objeto "u"
     Object[] arreglo;
     int[] arregloInt;
     int[] arregloDePrueba;
@@ -13,15 +15,17 @@ class ProductoAdyacentesTest {
 
     @BeforeEach
     void setUp() {
-        u = new ProductoAdyacentes();
+        u = new ProductoAdyacentes();      //se inicializa objeto "u" en cada prueba
 
     }
 
     @AfterEach
     void tearDown() {
-        u = null;
+        u = null;       //después de cada prueba el objeto se borra
     }
 
+    //Se probará que cada método prodAdyacentes retorne el valor que corresponda, dependiendo del arreglo
+    //a comprobar
     @org.junit.jupiter.api.Test
     void prodAdyacentes01() {
         arreglo = new Object[] {1, -4, 2, 2, 5, -1};
@@ -64,47 +68,54 @@ class ProductoAdyacentesTest {
         assertEquals("Error",u.productoAdyacentes(arreglo));
     }
 
-
     @org.junit.jupiter.api.Test
     void verificadorValores01() {
         arreglo = new Object[] {15000,1,2};
         assertFalse(u.verificadorValores(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorLargo01() {
         arreglo = new Object[]{1, "2a", 3};
         assertTrue(u.verificadorLargo(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros01() {
         arreglo = new Object[]{1, "2a", 3};
         assertFalse(u.verificadorNoNumeros(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros02() {
         arreglo = new Object[]{1, 2, 3};
         assertTrue(u.verificadorNoNumeros(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros03() {
         arreglo = new Object[]{"a", "B", "c"};
         assertFalse(u.verificadorNoNumeros(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros04() {
         arreglo = new Object[]{1,-4,2,2,5,-1};
         assertTrue(u.verificadorNoNumeros(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void verificadorNoNumeros05() {
         arreglo = new Object[]{"","","",""};
         assertFalse(u.verificadorNoNumeros(arreglo));
     }
+
     @org.junit.jupiter.api.Test
     void toString01() {
         variablePrueba = 36;
         assertEquals("36", u.toString(variablePrueba));
     }
+
     @org.junit.jupiter.api.Test
     void copiarEnInt() {
         arreglo = new Object[]{1,-4,2,2,5,-1};

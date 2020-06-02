@@ -35,7 +35,6 @@ public class ProductoAdyacentes {
     public boolean verificadorNoNumeros(Object[] arreglo){
         String aux = "";
 
-        System.out.println(aux.length());
         for (int i = 0; i < arreglo.length; i++) {
             aux = toString(arreglo[i]);
             if(aux.length() == 0){
